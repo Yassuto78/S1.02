@@ -1,5 +1,6 @@
 #include "sort.hpp"
+#include <algorithm>
 
-void sort(){
-    std::cout<<"Salut"<<std::endl;
+void sort(std::vector<int> &v){
+    std::stable_sort(v.begin(),v.end());
 }
