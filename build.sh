@@ -1,8 +1,7 @@
-#!/usr/bin/bash
 
 rm -f data/*
 g++ -Wall -Ofast -o bin/main.o -c src/main.cpp 
-for alg in   stdsort stable_sort  #qsort insertion_sort  selection_sort bubble_sort
+for alg in   v2quicksort  quicksort stdsort stable_sort  qsort insertion_sort  selection_sort bubble_sort
 do
     echo alg:$alg
     g++ -std=c++17 -Wall -Ofast -o bin/$alg.o -c src/$alg.cpp 
@@ -23,6 +22,6 @@ do
         done
     done
 done
-#echo "Creation des plots"
+echo "Creation des plots"
 cd src 
 sage plot.sage.py

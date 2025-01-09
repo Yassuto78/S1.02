@@ -1,9 +1,15 @@
 #include "sort.hpp"
+#include <random>
 
 
 void sort(std::vector<int> &v){
     if(v.size() >= 1){
-        int pivot = v[0];
+        static std::random_device rd;
+        static std::mt19937 gen(rd());
+        int min =0, max =v.size()-1;
+        std::uniform_real_distribution<double> distrib(min , max);
+        int i = static_cast<int>(round(distrib(gen)));
+        int pivot = v[i];
         std::vector<int> v1,v2,v3;
         for(int x : v){
             if(x < pivot){
